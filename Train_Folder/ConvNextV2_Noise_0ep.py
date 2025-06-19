@@ -55,7 +55,7 @@ class VerticalHalfCrop:
 
     def __call__(self, image, **kwargs):
         if random.random() > self.p:
-            return image  # ✅ 그냥 image만 리턴
+            return image  
 
         h, w, _ = image.shape
         top_or_bottom = random.choice(["top", "bottom"])
@@ -67,7 +67,7 @@ class VerticalHalfCrop:
 
         cropped = np.ascontiguousarray(cropped)
         resized = A.Resize(h, w)(image=cropped)['image']
-        return resized  # ✅ ndarray만 리턴
+        return resized  
 
 
 train_transform = A.Compose([
