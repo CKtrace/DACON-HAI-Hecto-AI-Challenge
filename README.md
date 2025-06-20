@@ -79,25 +79,20 @@ OS  : Ubuntu22.04
 
 ### Noise Image Removal Strategy
 The training dataset contained images that were captured from angles that could introduce noise to the training process.
-
 Through empirical experiments, we found that removing such noisy images resulted in lower validation Log Loss compared to retaining them. Based on this observation, we proceeded with excluding these samples from the final training set.
 
 -------
 
 ### Mitigating Overconfidence in Model Predictions
 Analysis of the prediction outputs revealed that some models were overconfident in specific classes, especially in ambiguous cases.
-
 Since the competition used Log Loss as the evaluation metric, such overconfidence led to significant penalties.
-
 To alleviate this, we employed model ensembling combined with Test Time Augmentation (TTA) to produce softer and more calibrated predictions, which helped improve overall performance.
 
 --------
 
 ### Handling Diverse Image Capture Environments
 The dataset featured a wide range of image capture conditions—indoors, outdoors, daytime, nighttime, etc.—introducing potential domain shifts that could hinder learning.
-
 To address this, we utilized Optuna to search for optimal augmentation combinations, selected the top-K performing pipelines, and composed a hybrid augmentation strategy. 
-
 This helped the model generalize better across varying environmental conditions.
 
 --------
@@ -105,9 +100,7 @@ This helped the model generalize better across varying environmental conditions.
 ### Efficient Experimentation Under Time Constraints
 Given the need to train multiple models and test various settings, long training times posed a challenge due to the competition deadline.
 To overcome this, we adopted a two-stage strategy:
-
 First, we used a small subset of the training set (approximately 20 samples per class) to efficiently explore candidate settings.
-
 Then, we applied the most promising configurations to the full dataset for final training.
 This approach significantly reduced experimentation time without compromising model performance.
 
@@ -115,9 +108,7 @@ This approach significantly reduced experimentation time without compromising mo
 
 ### Ensemble Weighting Strategy
 While assigning ensemble weights based on each model’s validation Log Loss improved performance over single-model predictions, it also led to overreliance on certain models.
-
 To mitigate this, we softened the weight distribution across models, encouraging diversity and reducing the risk of overfitting.
-
 Through this process, we also realized the importance of having a strong base model, and concluded that a soft, yet differentiated weighting strategy yields optimal results.
 
 
