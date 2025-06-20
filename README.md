@@ -69,7 +69,7 @@ OS  : Ubuntu22.04
 │       └─ SeResNet_Noise.py
 │
 └─ Inference_Folder
-        ├─ Ensemble_TTA_Inference.py           
+        └─ Ensemble_TTA_Inference.py           
 ```
 
 <br>
