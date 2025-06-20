@@ -1,0 +1,6 @@
+*.pth filter=lfs diff=lfs merge=lfs -text
+MaxVit_OptunaCutMix_Halfcrop_Noise.pth filter=lfs diff=lfs merge=lfs -text
+Regnety_OptunaCutMix_Halfcrop_Noise.pth filter=lfs diff=lfs merge=lfs -text
+SeResNext_OptunaCutMix_Halfcrop_Noise.pth filter=lfs diff=lfs merge=lfs -text
+ConvNextV2_OptunaCutMix_Halfcrop_Noise_0ep.pth filter=lfs diff=lfs merge=lfs -text
+EffNetV2_OptunaCutMix_Halfcrop_Noise.pth filter=lfs diff=lfs merge=lfs -text
